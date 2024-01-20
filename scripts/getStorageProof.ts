@@ -1,6 +1,7 @@
 import { Provider } from "zksync-ethers";
 import { hexZeroPad, arrayify, hexlify } from '@ethersproject/bytes';
 import blake from "blakejs";
+import { ethers } from "ethers";
 
 
 
@@ -18,7 +19,7 @@ interface StorageProofResponse {
     address: string;               // Account address
     storageProof: StorageProof[];  // Array of storage proofs for each requested key
 }
-export const getStorageProof = async (provider: Provider, addr: string, slots: number[], batchNr: number): Promise<StorageProofResponse> => {
+export const getStorageProof = async (provider: ethers.JsonRpcProvider, addr: string, slots: number[], batchNr: number): Promise<StorageProofResponse> => {
 
     const paddedSlots = slots.map((slot) => {
         return hexZeroPad(hexlify(arrayify(slot)), 32);
