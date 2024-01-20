@@ -3,12 +3,12 @@ import { JsonRpcProvider, ZeroHash, hexlify, toUtf8Bytes } from "ethers";
 import { getStorageProof } from "./getStorageProof";
 import { verifyStorageProof } from "./verify/verifyStorageProof";
 import { getBatchRootHash } from "./verify/utils/getBatchRootHash";
-
+require('dotenv').config()
 
 
 export const play = async () => {
-
-    const l1provider = new JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/xcO2SGAbW2ChIMF7GcU6vc35hcHVTjRJ");
+console.log(process.env)
+    const l1provider = new JsonRpcProvider(process.env.SEPOLIA_API_KEY);
     const l2provider = Provider.getDefaultProvider(types.Network.Sepolia)!; // zkSync Era testnet (L2)
 
 
