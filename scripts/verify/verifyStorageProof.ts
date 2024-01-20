@@ -26,7 +26,6 @@ export function verifyStorageProof(
 
   const treeKeyHash = crypto.createHash('blake2s256').update(treeKey).digest();
 
-  console.log(`Tree key hash: ${treeKeyHash.toString('hex')}`)
 
   let emptyHash = crypto.createHash('blake2s256').update(Buffer.alloc(40)).digest();
 
