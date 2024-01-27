@@ -3,14 +3,14 @@ require('dotenv').config()
 import "@nomicfoundation/hardhat-ethers";
 
 const config: HardhatUserConfig = {
-  
+
   defaultNetwork: "zkSyncSepoliaTestnet",
   networks: {
     sepolia: {
       url: process.env.SEPOLIA_URL,
       verifyURL: "https://sepolia.etherscan.io/",
       accounts: [process.env.WALLET_PRIVATE_KEY!]
-    
+
     },
     zkSyncSepoliaTestnet: {
       url: "https://sepolia.era.zksync.dev",
@@ -46,7 +46,14 @@ const config: HardhatUserConfig = {
   },
 
   solidity: {
-    version: "0.8.20",
+    compilers: [
+      {
+        version: "0.8.20",
+      },
+      {
+        version: "0.4.11",
+      }
+    ]
   },
 };
 

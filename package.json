@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@matterlabs/zksync-contracts-new": "git+https://github.com/matter-labs/era-contracts.git#2dfbc6bac84ecada93cab4a0dea113bc2aceba1c",
-    "@nomicfoundation/hardhat-ethers": "^3.0.5"
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "blake2s": "^1.1.0"
   }
 }

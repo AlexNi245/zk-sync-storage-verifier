@@ -2,7 +2,7 @@ import { ethers } from 'hardhat';
 
 async function main() {
   // Get the ContractFactory and Signer
-  const ZkSyncStorageVerifier = await ethers.getContractFactory('ZkSyncStorageVerifier');
+  const ZkSyncStorageVerifier = await ethers.getContractFactory('BLAKE2b');
   const signer = (await ethers.getSigners())[0];
 
   // Deploy the contract

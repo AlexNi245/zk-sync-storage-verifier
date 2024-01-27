@@ -1,6 +1,4 @@
-import { Provider } from "zksync-ethers";
-import { hexZeroPad, arrayify, hexlify } from '@ethersproject/bytes';
-import blake from "blakejs";
+import { arrayify, hexZeroPad, hexlify } from '@ethersproject/bytes';
 import { ethers } from "ethers";
 
 

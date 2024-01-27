@@ -7,11 +7,10 @@ export const getTotalBatchesVerified = async (l1Provider: ethers.JsonRpcProvider
     ])
 
     const result = await l2Provider.send('zks_getMainContract', [])
-
     const totalBatchesVerified = await l1Provider.call({
         to: result, data: diamondProxyAbi.encodeFunctionData('getTotalBatchesVerified', [])
     })
 
-    return toNumber(totalBatchesVerified)-1;
+    return toNumber(totalBatchesVerified)-20;
 
 }
