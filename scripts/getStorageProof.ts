@@ -18,7 +18,6 @@ interface StorageProofResponse {
     storageProof: StorageProof[];  // Array of storage proofs for each requested key
 }
 export const getStorageProof = async (provider: ethers.JsonRpcProvider, addr: string, slots: number[], batchNr: number): Promise<StorageProofResponse> => {
-
     const paddedSlots = slots.map((slot) => {
         return hexZeroPad(hexlify(arrayify(slot)), 32);
     })

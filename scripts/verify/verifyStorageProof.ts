@@ -45,6 +45,9 @@ export function verifyStorageProof(
 
   const encodedValue = getEncodeValue(index, value)
 
+  console.log('get encoded value ', encodedValue.toString('hex'))
+
+  
   if (encodedValue.length !== 40) {
     throw new Error(`Wrong encoded value length: ${encodedValue.length} - expected 40.`);
   }
